@@ -5,97 +5,147 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ilyass Regragui – Portfolio</title>
   <style>
+    /* --- GLOBAL STYLE --- */
     body {
-      font-family: "Helvetica", Arial, sans-serif;
-      background-color: #f8f9fb;
-      color: #222;
-      margin: 40px auto;
-      max-width: 850px;
+      margin: 0;
+      font-family: "Poppins", "Helvetica", Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4ff, #e7ebf3);
+      color: #1c1c1c;
       line-height: 1.6;
     }
-    h1, h2 {
-      color: #0c1d3c;
-    }
-    h1 {
+
+    /* --- HEADER --- */
+    header {
       text-align: center;
-      margin-bottom: 0.2em;
+      padding: 50px 20px 20px 20px;
+      background: linear-gradient(120deg, #0d1b2a, #1b263b);
+      color: white;
+      border-bottom: 4px solid #415a77;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4em;
+      letter-spacing: 1px;
+    }
+
     .subtitle {
-      text-align: center;
-      color: #555;
-      margin-bottom: 1.5em;
+      margin-top: 5px;
+      font-size: 1.1em;
+      color: #cfd8e5;
     }
-    .project {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background: white;
-      padding: 20px;
-      margin: 15px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+
+    .contact {
+      margin-top: 15px;
     }
-    .project h2 {
-      margin-top: 0;
-      color: #1b3a6f;
-    }
-    a {
-      color: #1b3a6f;
+
+    .contact a {
+      color: #84c5f4;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
     }
-    a:hover {
+    .contact a:hover {
       text-decoration: underline;
     }
-    .footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #777;
-      margin-top: 2em;
+
+    /* --- PROJECT CARDS --- */
+    main {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-    .button {
+
+    .project {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 25px;
+      margin-bottom: 25px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    }
+
+    .project h2 {
+      color: #1b3a6f;
+      margin-top: 0;
+      font-size: 1.4em;
+    }
+
+    .project p {
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .btn {
       display: inline-block;
-      padding: 8px 15px;
-      background: #1b3a6f;
+      background-color: #1b3a6f;
       color: white;
-      border-radius: 5px;
-      margin-top: 8px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
     }
-    .button:hover {
-      background: #0e244a;
+
+    .btn:hover {
+      background-color: #0e244a;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      text-align: center;
+      color: #666;
+      font-size: 0.9em;
+      padding: 25px 0;
+      border-top: 1px solid #ddd;
+      margin-top: 50px;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8em; }
+      .project { padding: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <h1>Ilyass Regragui</h1>
-  <div class="subtitle">Ensimag — Computer Science & Finance • Grenoble, France</div>
+  <header>
+    <h1>Ilyass Regragui</h1>
+    <div class="subtitle">Ensimag — Computer Science & Finance • Grenoble, France</div>
+    <div class="contact">
+      📧 <a href="mailto:ilyass.regrgaui42@gmail.com">ilyass.regrgaui42@gmail.com</a>
+    </div>
+  </header>
 
-  <p style="text-align:center">
-    📧 <a href="mailto:ilyass.regrgaui42@gmail.com">ilyass.regrgaui42@gmail.com</a><br>
-    <a class="button" href="pdf/cv.pdf" target="_blank">📄 View My CV</a>
-  </p>
+  <main>
+    <div class="project">
+      <h2>🎯 TIPE 2024 — Aim-Assist & Anti-Cheat System</h2>
+      <p>
+        A Raspberry Pi project combining computer vision, geometry, and probabilistic modeling
+        to detect player assistance behaviors in FPS games.
+      </p>
+      <a href="Aim_Assist_AntiCheat.pdf" target="_blank" class="btn">📄 Open PDF</a>
+    </div>
 
-  <div class="project">
-    <h2>🎯 Aim-Assist & Anti-Cheat System</h2>
-    <p>
-      TIPE 2024 — Raspberry Pi project combining image skeletonization,
-      optical wave modeling, and statistical cheat detection using Elo-based probabilistic analysis.
-    </p>
-    <a href="Aim_Assist_AntiCheat.pdf" target="_blank">🔗 View Project (PDF)</a>
-  </div>
+    <div class="project">
+      <h2>🚶 TIPE 2023 — Pedestrian Detection using HOG + SVM</h2>
+      <p>
+        Pedestrian detection and distance estimation using machine learning (HOG + SVM)
+        on Raspberry Pi with live camera feed.
+      </p>
+      <a href="PedestrianDetection_HOG_SVM.pdf" target="_blank" class="btn">📄 Open PDF</a>
+    </div>
+  </main>
 
-  <div class="project">
-    <h2>🚶 Pedestrian Detection using HOG + SVM</h2>
-    <p>
-      TIPE 2023 — Embedded vision project for real-time pedestrian detection
-      using Histogram of Oriented Gradients and Support Vector Machines.
-    </p>
-    <a href="pdf/TIPE OFFICIAL.pdf" target="_blank">🔗 View Project (PDF)</a>
-  </div>
-
-  <div class="footer">
+  <footer>
     © 2025 Ilyass Regragui — All rights reserved.
-  </div>
+  </footer>
 
 </body>
 </html>
-
